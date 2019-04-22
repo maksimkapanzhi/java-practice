@@ -6,6 +6,8 @@ public class Summa {
     public static void main(String[] args) {
         double first = 1.2;
         double second = 1.4;
+        
+        // а зачем эта строка?
         System.out.println(first+second);
 
         /*BigDecimal bigDecimal = new BigDecimal(first);
