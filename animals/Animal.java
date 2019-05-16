@@ -1,6 +1,7 @@
 package animals;
 
 public class Animal {
+    //Поля родительского класса, использующиеся наследниками должны быть protected
     String name;
     int age;
     String pedigree;
