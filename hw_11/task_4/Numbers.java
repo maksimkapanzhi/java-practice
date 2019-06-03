@@ -12,6 +12,10 @@ public class Numbers {
         numbers.add(5);
         System.out.println(numbers);
 
+       /* 1. у тебя был Set (TreeSet), который ты поменял на лист, т.е. изменил требование и
+       теперь другие могут добавить неуникальные элементы, никогда так не делай
+       2. numbers = (TreeSet<Integer>) numbers.descendingSet();
+         */   
         List rever = new ArrayList(numbers);
         Collections.reverse(rever);
         System.out.println("В обратном порядке: " + rever);
