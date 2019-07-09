@@ -1,9 +1,6 @@
 package by.stormnet.figuresfx.controller;
 
-import by.stormnet.figuresfx.figures.Circle;
-import by.stormnet.figuresfx.figures.Figure;
-import by.stormnet.figuresfx.figures.Rectangle;
-import by.stormnet.figuresfx.figures.Triangle;
+import by.stormnet.figuresfx.figures.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
@@ -45,7 +42,7 @@ public class MainScreenViewController implements Initializable {
     private Figure createFigure(double x, double y){
         Figure figure = null;
 
-        switch (random.nextInt(3)){
+        switch (random.nextInt(4)){
             case Figure.FIGURES_TYPE_CIRCLE:
                 figure = new Circle (x, y, random.nextInt(10), Color.GREEN, random.nextInt(50));
                 break;
@@ -54,6 +51,9 @@ public class MainScreenViewController implements Initializable {
                 break;
             case Figure.FIGURES_TYPE_TRIANGLE:
                 figure = new Triangle(x, y, random.nextInt(5), Color.ORANGE, random.nextInt(20));
+                break;
+            case Figure.FIGURES_TYPE_MYFIGURE:
+                figure = new MyFigure(x, y, random.nextInt(20), Color.PURPLE, random.nextInt(50));
                 break;
             default:
                 System.out.println("Unknown type");
