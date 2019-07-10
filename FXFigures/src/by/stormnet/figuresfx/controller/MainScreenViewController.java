@@ -1,5 +1,6 @@
 package by.stormnet.figuresfx.controller;
 
+import by.stormnet.figuresfx.drawutils.Drawer;
 import by.stormnet.figuresfx.figures.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,7 +29,7 @@ public class MainScreenViewController implements Initializable {
     }
 
     private void addFigure(Figure figure){
-    figures.add(figure);
+        figures.add(figure);
     }
     private Figure createFigure(double x, double y){
         Figure figure = null;
@@ -57,7 +58,12 @@ public class MainScreenViewController implements Initializable {
         for (Figure figure : figures){
             if(figure != null){
                 figure.draw(canvas.getGraphicsContext2D());
+                canvas.getGraphicsContext2D().clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+                Drawer<Figure> drawer = new Drawer<>(figures);
+                drawer.draw(canvas.getGraphicsContext2D());
             }
+
+
         }
     }
     @FXML

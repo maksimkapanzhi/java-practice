@@ -1,9 +1,10 @@
 package by.stormnet.figuresfx.figures;
 
+import by.stormnet.figuresfx.drawutils.Drawable;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public abstract class Figure {
+public abstract class Figure implements Drawable {
 
     public static final int FIGURES_TYPE_CIRCLE = 0;
     public static final int FIGURES_TYPE_RECTANGLE = 1;
