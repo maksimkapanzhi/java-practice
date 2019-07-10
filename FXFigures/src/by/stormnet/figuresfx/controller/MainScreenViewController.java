@@ -9,12 +9,13 @@ import javafx.scene.paint.Color;
 
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
 
 public class MainScreenViewController implements Initializable {
     private Random random;
-    private Figure[] figures;
+    private ArrayList <Figure> figures;
 
     @FXML
     private Canvas canvas;
@@ -22,22 +23,12 @@ public class MainScreenViewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("MainScreenViewController!");
-        figures = new Figure[1];
+        figures = new ArrayList();
         random = new Random(System.currentTimeMillis());
     }
 
     private void addFigure(Figure figure){
-        if (figures [figures.length - 1] == null){
-            figures[figures.length - 1] = figure;
-            return;
-        }
-        Figure[] tmp = new Figure[figures.length+1];
-        int index = 0;
-        for(; index < figures.length; index++){
-            tmp[index] = figures[index];
-        }
-        tmp[index] = figure;
-        figures = tmp;
+    figures.add(figure);
     }
     private Figure createFigure(double x, double y){
         Figure figure = null;
@@ -47,7 +38,7 @@ public class MainScreenViewController implements Initializable {
                 figure = new Circle (x, y, random.nextInt(10), Color.GREEN, random.nextInt(50));
                 break;
             case Figure.FIGURES_TYPE_RECTANGLE:
-                figure = new Rectangle(x, y, random.nextInt(10), Color.RED, random.nextInt(50), random.nextInt(50));
+                figure = new Rectangle(x, y, random.nextInt(10), Color.BLUE, random.nextInt(50), random.nextInt(50));
                 break;
             case Figure.FIGURES_TYPE_TRIANGLE:
                 figure = new Triangle(x, y, random.nextInt(5), Color.ORANGE, random.nextInt(20));
