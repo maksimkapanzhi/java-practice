@@ -1,5 +1,6 @@
 package by.stormnet.figuresfx.controller;
 
+import by.stormnet.figuresfx.FigureException;
 import by.stormnet.figuresfx.drawutils.Drawer;
 import by.stormnet.figuresfx.figures.*;
 import javafx.fxml.FXML;
@@ -16,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class MainScreenViewController implements Initializable {
     private Random random;
-    private ArrayList <Figure> figures;
+    private ArrayList<Figure> figures;
 
     @FXML
     private Canvas canvas;
@@ -28,15 +29,17 @@ public class MainScreenViewController implements Initializable {
         random = new Random(System.currentTimeMillis());
     }
 
-    private void addFigure(Figure figure){
+    private void addFigure(Figure figure) {
         figures.add(figure);
     }
-    private Figure createFigure(double x, double y){
+
+    private Figure createFigure(double x, double y) throws FigureException {
         Figure figure = null;
 
-        switch (random.nextInt(4)){
+        switch (random.nextInt(4)) {
+
             case Figure.FIGURES_TYPE_CIRCLE:
-                figure = new Circle (x, y, random.nextInt(10), Color.GREEN, random.nextInt(50));
+                figure = new Circle(x, y, random.nextInt(10), Color.GREEN, random.nextInt(50));
                 break;
             case Figure.FIGURES_TYPE_RECTANGLE:
                 figure = new Rectangle(x, y, random.nextInt(10), Color.BLUE, random.nextInt(50), random.nextInt(50));
@@ -47,16 +50,20 @@ public class MainScreenViewController implements Initializable {
             case Figure.FIGURES_TYPE_MYFIGURE:
                 figure = new MyFigure(x, y, random.nextInt(20), Color.PURPLE, random.nextInt(50));
                 break;
-            default:
-                System.out.println("Unknown type");
+
+        }
+        try {
+            throw new FigureException("Unknown figure");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
         return figure;
     }
 
-    private void repaint(){
+    private void repaint() {
         canvas.getGraphicsContext2D().clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-        for (Figure figure : figures){
-            if(figure != null){
+        for (Figure figure : figures) {
+            if (figure != null) {
                 figure.draw(canvas.getGraphicsContext2D());
                 canvas.getGraphicsContext2D().clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
                 Drawer<Figure> drawer = new Drawer<>(figures);
@@ -66,9 +73,10 @@ public class MainScreenViewController implements Initializable {
 
         }
     }
+
     @FXML
-    private void onMouseClicked(MouseEvent mouseEvent) {
-        addFigure (createFigure(mouseEvent.getX(), mouseEvent.getY()));
+    private void onMouseClicked(MouseEvent mouseEvent) throws FigureException {
+        addFigure(createFigure(mouseEvent.getX(), mouseEvent.getY()));
         repaint();
     }
 }
