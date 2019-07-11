@@ -1,0 +1,34 @@
+2019-07-12 01:49:46 WARN  SimpleMain:24 - x = 0; exception may occur
+2019-07-12 01:49:46 ERROR SimpleMain:16 - / by zero
+java.lang.ArithmeticException: / by zero
+	at forlogs.SimpleMain.divide(SimpleMain.java:26)
+	at forlogs.SimpleMain.main(SimpleMain.java:14)
+2019-07-12 01:49:46 INFO  SimpleMain:14 - result: 2
+2019-07-12 01:49:46 INFO  SimpleMain:14 - result: 1
+2019-07-12 01:55:09 INFO  MainScreenViewController:53 - Created
+2019-07-12 01:55:09 INFO  MainScreenViewController:53 - Created
+2019-07-12 01:55:10 INFO  MainScreenViewController:53 - Created
+2019-07-12 01:55:14 INFO  MainScreenViewController:53 - Created
+2019-07-12 01:55:14 INFO  MainScreenViewController:53 - Created
+2019-07-12 01:55:14 INFO  MainScreenViewController:53 - Created
+2019-07-12 01:55:16 INFO  MainScreenViewController:53 - Created
+2019-07-12 01:55:29 INFO  MainScreenViewController:53 - Created
+2019-07-12 01:55:37 INFO  MainScreenViewController:53 - Created
+2019-07-12 02:03:17 INFO  MainScreenViewController:32 - MainScreenViewController!
+2019-07-12 02:03:19 INFO  MainScreenViewController:50 - Circle is created
+2019-07-12 02:03:24 INFO  MainScreenViewController:54 - Rectangle is created
+2019-07-12 02:03:24 INFO  MainScreenViewController:62 - My own Figure is created
+2019-07-12 02:03:25 INFO  MainScreenViewController:62 - My own Figure is created
+2019-07-12 02:03:25 INFO  MainScreenViewController:54 - Rectangle is created
+2019-07-12 02:03:26 INFO  MainScreenViewController:62 - My own Figure is created
+2019-07-12 02:03:27 INFO  MainScreenViewController:62 - My own Figure is created
+2019-07-12 02:03:27 INFO  MainScreenViewController:58 - Triangle is created
+2019-07-12 02:03:28 INFO  MainScreenViewController:54 - Rectangle is created
+2019-07-12 02:03:28 INFO  MainScreenViewController:62 - My own Figure is created
+2019-07-12 02:03:28 INFO  MainScreenViewController:50 - Circle is created
+2019-07-12 02:03:29 INFO  MainScreenViewController:58 - Triangle is created
+2019-07-12 02:03:29 INFO  MainScreenViewController:50 - Circle is created
+2019-07-12 02:03:29 INFO  MainScreenViewController:58 - Triangle is created
+2019-07-12 02:03:30 INFO  MainScreenViewController:54 - Rectangle is created
+2019-07-12 02:03:30 INFO  MainScreenViewController:58 - Triangle is created
+2019-07-12 02:03:31 INFO  MainScreenViewController:50 - Circle is created
